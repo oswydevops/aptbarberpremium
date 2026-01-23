@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APT Barber - Premium Barber Experience</title>
+    
+    <!-- Enlace de Favicon Optimizado -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1" />
+    
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1754cf',
+              'primary-hover': '#1244a8',
+              'background-light': '#f6f6f8',
+              'background-dark': '#0a0e17',
+              'surface-dark': '#121826',
+              'card-dark': '#161e2e',
+              'text-secondary': '#93a5c8',
+            },
+            fontFamily: {
+              display: ['Manrope', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 3s ease-in-out infinite',
+              'slide-up': 'slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              'slide-up': {
+                'from': { transform: 'translateY(20px)', opacity: '0' },
+                'to': { transform: 'translateY(0)', opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .glass {
+          @apply backdrop-blur-xl bg-white/80 dark:bg-[#161e2e]/80 border border-white/20 dark:border-slate-800;
+        }
+        .shadow-premium {
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        .shadow-primary-glow {
+          box-shadow: 0 10px 30px rgba(23, 84, 207, 0.3);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
+<body class="bg-[#f6f6f8] dark:bg-[#0a0e17] text-slate-900 dark:text-white font-display antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

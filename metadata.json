@@ -1,0 +1,8 @@
+{
+  "name": "APT Barber",
+  "description": "Una experiencia de barbería premium con estilo y precisión. Reserva tu cita y descubre nuestros servicios exclusivos.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
