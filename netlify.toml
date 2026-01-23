@@ -4,8 +4,8 @@
   functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
+  NODE_VERSION = "24"
+  NPM_VERSION = "11"
 
 [context.production.environment]
   REACT_APP_VERSION = "production"
