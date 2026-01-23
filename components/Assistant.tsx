@@ -50,7 +50,7 @@ const Assistant: React.FC = () => {
     setIsLoading(true);
 
     // Acceso seguro a la API KEY para evitar ReferenceError: process is not defined
-    const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
+    const apiKey = process.env.GEMINI_API_KEY || '';
 
     if (!apiKey) {
       setMessages(prev => [...prev, { 
