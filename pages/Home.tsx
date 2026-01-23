@@ -1,10 +1,11 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// Fixed: Imported CONTACT_INFO and CARD_NUMBER instead of non-existent WHATSAPP_NUMBER
 import { GALLERY, CONTACT_INFO, CARD_NUMBER } from '../constants';
+import GuideModal from '../components/GuideModal';
 
 const Home: React.FC = () => {
+  const [isGuideOpen, setIsGuideOpen] = useState(false);
   const handleHeroBooking = () => {
     const message = encodeURIComponent("Hola! He visto su web y me gustaría reservar una cita.");
     // Fixed: Used CONTACT_INFO.whatsappNumber from constants
@@ -45,7 +46,7 @@ const Home: React.FC = () => {
               Bienvenido a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-primary to-blue-600">tu barbería</span>
             </h1>
             <p className="text-slate-200 text-lg md:text-2xl font-medium leading-relaxed max-w-[600px] mx-auto opacity-90">
-              Estilo y precisión en cada corte. Tu imagen, perfeccionada por profesionales en un ambiente único.
+              Estilo y precisión en cada corte. Tu imagen, perfeccionada por APT en un ambiente único.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
               <button 
@@ -55,9 +56,21 @@ const Home: React.FC = () => {
                 <img src="/icons/whatsapp.svg" alt="WhatsApp" className="size-7 object-contain invert" />
                 Reservar Ahora
               </button>
-              <Link to="/servicios" className="flex min-w-[200px] items-center justify-center gap-3 rounded-2xl h-14 px-8 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white text-lg font-bold border border-white/20 transition-all">
-                Ver Servicios
-              </Link>
+              <button 
+                onClick={() => setIsGuideOpen(true)}
+                className="flex min-w-[200px] items-center justify-center gap-3 rounded-2xl h-14 px-8 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white text-lg font-bold border border-white/20 transition-all"
+              >
+              <img 
+                  src="/icons/bookmark.svg" 
+                  alt="Guía" 
+                  className="size-7 object-contain invert" 
+                  onError={(e) => {
+                    // Fallback por si el archivo no existe aún
+                    e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PHBhdGggZD0iTTEyIDE2djRNOTIgMTJoLjAxIi8+PC9zdmc+';
+                  }}
+                />                
+                Guía de Uso
+              </button>
             </div>
           </div>
         </div>  
@@ -159,6 +172,12 @@ const Home: React.FC = () => {
             <p className="text-slate-400">Nos tomamos el tiempo necesario para asegurar que cada detalle sea perfecto.</p>
           </div>
         </div>
+
+        <GuideModal 
+        isOpen={isGuideOpen} 
+        onClose={() => setIsGuideOpen(false)} 
+        mode="guide"
+        />
       </section>
     </div>
   );

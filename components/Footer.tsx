@@ -1,8 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { CONTACT_INFO } from '../constants';
+import GuideModal from './GuideModal';
 
 const Footer: React.FC = () => {
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
 
   // Configuración de los métodos de pago con rutas a archivos locales en public/icons/
   const paymentMethods = [
@@ -11,6 +13,7 @@ const Footer: React.FC = () => {
     { src: '/icons/transfermovil-logo.svg', label: 'TransferMovil' },
     { src: '/icons/bitcoin-logo.svg', label: 'Cripto' }
   ];
+
   return (
     <footer className="w-full bg-slate-50 dark:bg-card-dark border-t border-slate-200 dark:border-[#243047] py-16">
       <div className="max-w-[1280px] mx-auto px-4 md:px-10">
@@ -100,11 +103,21 @@ const Footer: React.FC = () => {
         <div className="pt-8 border-t border-slate-200 dark:border-[#243047] flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
           <p>© {new Date().getFullYear()} APT Barber. Todos los derechos reservados.</p>
           <div className="flex gap-6 font-bold uppercase tracking-widest text-[10px]">
-            <a href="#" className="hover:text-primary">Privacidad</a>
-            <a href="#" className="hover:text-primary">Términos</a>
+            <button 
+              onClick={() => setIsPrivacyOpen(true)}
+              className="hover:text-primary transition-colors"
+            >
+              Política de Privacidad
+            </button>
           </div>
         </div>
       </div>
+
+      <GuideModal 
+        isOpen={isPrivacyOpen} 
+        onClose={() => setIsPrivacyOpen(false)} 
+        mode="privacy"
+      />
     </footer>
   );
 };

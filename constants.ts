@@ -2,7 +2,7 @@
 import { Service, GalleryItem } from './types';
 
 
-export const CARD_NUMBER = "XXXX XXXX XXXX XXXX";
+export const CARD_NUMBER = "9224-0699-9858-2890";
 // CONFIGURACIÓN DE CONTACTO - Modifica esto para personalizar tu barbero
 export const CONTACT_INFO = {
   phone: "+53 5560 5133",
@@ -16,7 +16,7 @@ export const SERVICES: Service[] = [
     id: '1',
     name: 'Corte Normal',
     description: 'Corte tradicional con tijera y máquina, buscando un acabado natural y elegante.',
-    price: 150.00,
+    price: 200.00,
     icon: 'content_cut'
   },
   {
@@ -37,7 +37,7 @@ export const SERVICES: Service[] = [
     id: '4',
     name: 'Arreglo de Cejas',
     description: 'Afeitado y perfilado de cejas para un look impecable.',
-    price: 150.00,
+    price: 50.00,
     icon: 'content_cut'
   },
   {
