@@ -64,10 +64,10 @@ const Home: React.FC = () => {
           
         
         {/* Policy Notification Card */}
-        <div className="relative -mt-16 px-4 md:px-10 flex justify-center z-10 flex items-center">
+        <div className="relative -mt-4 px-4 md:px-10 flex justify-center z-10 flex items-center">
           <div className="w-full max-w-3xl bg-surface-dark/95 dark:bg-[#1a2632]/95 backdrop-blur-md border border-[#233748] rounded-xl shadow-2xl overflow-hidden p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center justify-between">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-full bg-primary/10 text-primary shrink-0">
+              <div className="p-3 rounded-full bg-primary/10 text-primary shrink-0 mt-4">
                 <img src="/icons/transfermovil-logo.svg" alt="Transfermovil" className="size-10 object-contain" />
               </div>
               <div className="flex flex-col gap-1">

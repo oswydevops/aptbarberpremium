@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="group flex items-start gap-4 hover:text-primary transition-colors"
               >
-                <div className="size-14 rounded-full bg-slate-200 dark:bg-[#243047] flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                <div className="size-14 aspect-square flex-shrink-0 rounded-full bg-slate-200 dark:bg-[#243047] flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                   <span className="material-symbols-outlined">location_on</span>
                 </div>
                 <div>

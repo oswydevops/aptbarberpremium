@@ -22,28 +22,28 @@ export const SERVICES: Service[] = [
   {
     id: '2',
     name: 'Machimbrado',
-    description: 'Perfilado experto, toalla caliente y aceites esenciales premium.',
+    description: 'Perfilado experto, skin-fade o degradado.',
     price: 400.00,
     icon: 'content_cut'
   },
   {
     id: '3',
     name: 'Barba Completa',
-    description: 'Experiencia completa: Lavado, corte, arreglo de barba y estilizado final.',
+    description: 'Experiencia completa: afeitado, perfilado, degradado de barba y estilizado final.',
     price: 150.00,
     icon: 'content_cut'
   },
   {
     id: '4',
     name: 'Arreglo de Cejas',
-    description: 'Afeitado tradicional a navaja con espuma caliente y masaje post-afeitado.',
+    description: 'Afeitado y perfilado de cejas para un look impecable.',
     price: 150.00,
     icon: 'content_cut'
   },
   {
     id: '5',
     name: 'Dibujos',
-    description: 'Afeitado tradicional a navaja con espuma caliente y masaje post-afeitado.',
+    description: 'Dibujos en los cortes de su preferencia.',
     price: 150.00,
     icon: 'content_cut'
   },
@@ -58,7 +58,7 @@ export const SERVICES: Service[] = [
 
 export const GALLERY: GalleryItem[] = [
   { id: '1', title: 'Calvo', imageUrl: '/images/calvo.jpg' },
-  { id: '2', title: 'Barba & Skin Fade', imageUrl: '/images/fade.jpg' },
+  { id: '2', title: 'Barba & Skin Fade', imageUrl: '/images/fade.png' },
   { id: '3', title: 'Corte Clásico', imageUrl: '/images/tijeras.jpg' },
-  { id: '4', title: 'Estilo Dibujo', imageUrl: '/images/dibujo.jpg' }
+  { id: '4', title: 'Estilo Dibujo', imageUrl: '/images/dibujo.jpeg' }
 ];
