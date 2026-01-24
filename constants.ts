@@ -57,8 +57,8 @@ export const SERVICES: Service[] = [
 ];
 
 export const GALLERY: GalleryItem[] = [
-  { id: '1', title: 'Calvo', imageUrl: '/images/calvo.jpg' },
-  { id: '2', title: 'Barba & Skin Fade', imageUrl: '/images/fade.png' },
+  { id: '1', title: 'Machimbrado', imageUrl: '/images/machimbrado.jpg' },
+  { id: '2', title: 'Corte Niños', imageUrl: '/images/fade.png' },
   { id: '3', title: 'Corte Clásico', imageUrl: '/images/tijeras.jpg' },
   { id: '4', title: 'Estilo Dibujo', imageUrl: '/images/dibujo.jpeg' }
 ];
