@@ -31,10 +31,10 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // CRÍTICO: Configurar esto PRIMERO
+        // Aumentar límite de precaché para archivos más grandes
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB
         
-        // Excluir EXPLÍCITAMENTE la imagen problemática
+        // Excluir explícitamente la imagen problemática
         globIgnores: [
           '**/machimbrado.jpg',
           '**/images/machimbrado.jpg',
@@ -42,9 +42,36 @@ export default defineConfig({
           '**/public/images/machimbrado.jpg'
         ],
         
-        // Solo incluir tipos de archivo específicos
+        // Patrones específicos: incluir archivos pequeños, excluir imágenes grandes
         globPatterns: [
-          '**/*.{js,css,html,ico,svg,woff,woff2,ttf,json}'
+          '**/*.{js,css,html,ico,svg,woff,woff2,ttf,json}',
+          '**/images/*.{png,webp}' // Solo PNG y WebP pequeños
+        ],
+        
+        // RuntimeCaching para imágenes: cargarlas bajo demanda
+        runtimeCaching: [
+          {
+            urlPattern: /\.jpg$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images-cache',
+              expiration: {
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 días
+              }
+            }
+          },
+          {
+            urlPattern: /\.png$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images-cache',
+              expiration: {
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60
+              }
+            }
+          }
         ],
         
         cleanupOutdatedCaches: true,
