@@ -31,39 +31,21 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // SOLUCIÓN: Aumentar a 5MB O EXCLUIR completamente
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB exactos
-        
-        // Excluir específicamente la imagen problemática
-        globIgnores: [
-          '**/machimbrado.jpg',       // Nombre específico
-          '**/images/machimbrado.jpg', // Ruta específica
-          '**/*.jpg',                  // Todos JPG por seguridad
-          '**/*.jpeg'                  // Todos JPEG
-        ],
-        
-        // Especificar EXACTAMENTE qué archivos incluir
+        // NO precachear imágenes JAMÁS
         globPatterns: [
-          '**/*.{js,css,html,ico,png,svg,woff,woff2,ttf,eot,json}'
+          '**/*.{js,css,html,json,ico,svg}'
         ],
         
-        // Cachear imágenes bajo demanda en lugar de precaché
-        runtimeCaching: [
-          {
-            urlPattern: /\.(?:jpg|jpeg|png|gif|webp|svg)$/i,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'images-cache',
-              expiration: {
-                maxEntries: 50,
-                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 días
-              },
-              cacheableResponse: {
-                statuses: [0, 200]
-              }
-            }
-          }
+        // Excluir TODAS las imágenes
+        globIgnores: [
+          '**/*.{jpg,jpeg,png,gif,webp,bmp,tiff}',
+          '**/images/**',
+          '**/assets/**/*.{jpg,jpeg,png}',
+          '**/public/**/*.{jpg,jpeg,png}'
         ],
+        
+        // Límite muy alto por seguridad
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // 10 MB
         
         cleanupOutdatedCaches: true,
         clientsClaim: true,
