@@ -62,6 +62,10 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose, mode = 'guide'
                   el número de teléfono que lo llevará al centro de llamadas de su móvil si desea llamar, Métodos de pago que utilizamos y Horarios de trabajo;
                   además podrá consultar las políticas de privacidad del sitio.
                 </p>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                  Para instalar en Android: El usuario debe abrir la web en Chrome, pulsar los tres puntos verticales y seleccionar "Instalar aplicación" o "Añadir a la pantalla de inicio".
+                  Para instalar en iOS (iPhone): El usuario debe abrir la web en Safari, pulsar el botón de "Compartir" (el cuadrado con la flecha hacia arriba) y seleccionar "Añadir a la pantalla de inicio".
+                </p>
               </section>
 
               {/* Section 2: AI Assistant */}
