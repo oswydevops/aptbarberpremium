@@ -31,15 +31,46 @@ export default defineConfig({
         ]
       },
       workbox: {
-        maximumFileSizeToCacheInBytes: 4194304, // 4 MB + margen
-        globIgnores: ['**/*.jpg', '**/*.jpeg'],
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        // SOLUCIÓN: Aumentar a 5MB O EXCLUIR completamente
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB exactos
+        
+        // Excluir específicamente la imagen problemática
+        globIgnores: [
+          '**/machimbrado.jpg',       // Nombre específico
+          '**/images/machimbrado.jpg', // Ruta específica
+          '**/*.jpg',                  // Todos JPG por seguridad
+          '**/*.jpeg'                  // Todos JPEG
+        ],
+        
+        // Especificar EXACTAMENTE qué archivos incluir
+        globPatterns: [
+          '**/*.{js,css,html,ico,png,svg,woff,woff2,ttf,eot,json}'
+        ],
+        
+        // Cachear imágenes bajo demanda en lugar de precaché
+        runtimeCaching: [
+          {
+            urlPattern: /\.(?:jpg|jpeg|png|gif|webp|svg)$/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 días
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          }
+        ],
+        
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true
       },
       devOptions: {
-        enabled: false // Desactiva en desarrollo para evitar errores
+        enabled: false
       }
     })
   ],
@@ -51,7 +82,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    chunkSizeWarningLimit: 1000, // Aumenta el límite de advertencia
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
