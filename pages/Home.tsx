@@ -34,7 +34,7 @@ const Home: React.FC = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 group-hover:scale-105"
             style={{ 
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url("/public/images/hero.jpg")` 
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url("/hero.jpg")` 
             }}
           />
           
