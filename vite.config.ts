@@ -31,21 +31,21 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // NO precachear imágenes JAMÁS
-        globPatterns: [
-          '**/*.{js,css,html,json,ico,svg}'
-        ],
+        // CRÍTICO: Configurar esto PRIMERO
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB
         
-        // Excluir TODAS las imágenes
+        // Excluir EXPLÍCITAMENTE la imagen problemática
         globIgnores: [
-          '**/*.{jpg,jpeg,png,gif,webp,bmp,tiff}',
-          '**/images/**',
-          '**/assets/**/*.{jpg,jpeg,png}',
-          '**/public/**/*.{jpg,jpeg,png}'
+          '**/machimbrado.jpg',
+          '**/images/machimbrado.jpg',
+          '**/assets/images/machimbrado.jpg',
+          '**/public/images/machimbrado.jpg'
         ],
         
-        // Límite muy alto por seguridad
-        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // 10 MB
+        // Solo incluir tipos de archivo específicos
+        globPatterns: [
+          '**/*.{js,css,html,ico,svg,woff,woff2,ttf,json}'
+        ],
         
         cleanupOutdatedCaches: true,
         clientsClaim: true,
