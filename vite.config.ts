@@ -31,34 +31,40 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // Aumentar límite a 6MB
-        maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // 6MB
-        
-        // Solo precachear archivos CSS, JS, HTML y fuentes
+        // NO PRECACHEAR IMÁGENES - solo archivos esenciales
         globPatterns: [
-          '**/*.{js,css,html,ico,svg,woff,woff2,ttf,json}'
+          '**/*.{js,css,html}'
         ],
+        dontCacheBustURLsMatching: /\.(js|css)$/,
         
-        // CRÍTICO: Excluir machimbrado.jpg del precaché
-        globIgnores: [
-          '**/machimbrado.jpg'
-        ],
-        
-        // RuntimeCaching para imágenes: cargarlas bajo demanda
+        // RuntimeCaching para TODAS las imágenes
         runtimeCaching: [
           {
-            urlPattern: /\.(jpg|jpeg|png|gif|webp)$/i,
+            urlPattern: /\.(jpg|jpeg|png|gif|webp|svg)$/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'images-cache',
               expiration: {
-                maxEntries: 100,
-                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 días
+                maxEntries: 200,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 días
+              }
+            }
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts-cache',
+              expiration: {
+                maxEntries: 20,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // 1 año
               }
             }
           }
         ],
         
+        navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/api\//],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true
