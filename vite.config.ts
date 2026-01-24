@@ -31,12 +31,17 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // Aumentar límite a 6MB para que machimbrado.jpg (4.12MB) entre
+        // Aumentar límite a 6MB
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // 6MB
         
         // Solo precachear archivos CSS, JS, HTML y fuentes
         globPatterns: [
           '**/*.{js,css,html,ico,svg,woff,woff2,ttf,json}'
+        ],
+        
+        // CRÍTICO: Excluir machimbrado.jpg del precaché
+        globIgnores: [
+          '**/machimbrado.jpg'
         ],
         
         // RuntimeCaching para imágenes: cargarlas bajo demanda
