@@ -15,3 +15,12 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// Registro del Service Worker para que sea instalable como App
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => console.log('SW registrado con éxito', reg))
+      .catch(err => console.log('Error al registrar SW', err));
+  });
+}
