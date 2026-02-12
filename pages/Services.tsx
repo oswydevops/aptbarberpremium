@@ -24,8 +24,8 @@ const Services: React.FC = () => {
                 <div className="size-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
                   <span className="material-symbols-outlined text-3xl">{s.icon}</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{s.name}</h3>
-                <p className="text-slate-500 mb-8 leading-relaxed">{s.description}</p>
+                <h3 className="text-3xl font-bold mb-4">{s.name}</h3>
+                <p className="text-slate-500 text-xl italic mb-8 leading-relaxed">{s.description}</p>
               </div>
               
               <div className="flex items-center justify-between mt-auto pt-8 border-t border-slate-100 dark:border-slate-800">
@@ -45,10 +45,10 @@ const Services: React.FC = () => {
         <div className="max-w-[1280px] mx-auto bg-primary rounded-[3rem] p-12 md:p-20 text-center text-white flex flex-col items-center gap-8 shadow-2xl shadow-primary/40 relative overflow-hidden">
           <div className="absolute top-0 right-0 size-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter relative z-10">¿Cansado de parecer un ovejo?</h2>
-          <p className="text-xl opacity-80 max-w-[600px] relative z-10">Agenda tu cita ahora y vive la experiencia APT Barber.</p>
+          <p className="text-xl italic opacity-80 max-w-[600px] relative z-10">Agenda tu cita ahora y vive la experiencia APT Barber.</p>
           <button 
             onClick={() => bookNow("Cita General")}
-            className="flex items-center justify-center gap-4 bg-white text-primary px-12 py-5 rounded-2xl font-black text-lg hover:scale-105 transition-transform relative z-10"
+            className="flex items-center justify-center gap-4 bg-white text-primary px-12 py-5 rounded-2xl font-black text-lg hover:scale-105 transition-transform relative z- animate-bounce"
           >
             <img src="/icons/whatsapp.svg" alt="WhatsApp" className="size-10 object-contain opacity-60" />
             WHATSAPP

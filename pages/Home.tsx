@@ -39,19 +39,19 @@ const Home: React.FC = () => {
           />
           
           <div className="relative z-10 flex flex-col gap-6 text-center max-w-[800px] animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <div className="mx-auto bg-primary/20 backdrop-blur-md px-4 py-1 rounded-full border border-primary/30 w-fit mb-2">
+            <div className="mx-auto bg-primary/20 backdrop-blur-md px-4 py-2 rounded-full border border-primary/30 w-fit mb-2 animate-pulse">
               <span className="text-blue-400 text-xs font-black uppercase tracking-[0.3em]">Corte & Estilo Premium</span>
             </div>
             <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-black leading-[1.1] tracking-tight">
               Bienvenido a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-primary to-blue-600">tu barbería</span>
             </h1>
-            <p className="text-slate-200 text-lg md:text-2xl font-medium leading-relaxed max-w-[600px] mx-auto opacity-90">
+            <p className="text-slate-200 text-lg md:text-2xl font-medium leading-relaxed max-w-[600px] mx-auto opacity-90 italic">
               Estilo y precisión en cada corte. Tu imagen, perfeccionada por APT en un ambiente único.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
               <button 
                 onClick={handleHeroBooking}
-                className="flex min-w-[200px] items-center justify-center gap-3 rounded-2xl h-14 px-8 bg-primary hover:bg-blue-600 text-white text-lg font-bold transition-all transform hover:scale-105 shadow-xl shadow-blue-900/40"
+                className="flex min-w-[200px] items-center justify-center gap-3 rounded-2xl h-14 px-8 bg-primary hover:bg-blue-600 text-white text-lg font-bold transition-all transform hover:scale-105 shadow-xl"
               >
                 <img src="/icons/whatsapp.svg" alt="WhatsApp" className="size-7 object-contain invert" />
                 Reservar Ahora
@@ -77,7 +77,7 @@ const Home: React.FC = () => {
           
         
         {/* Policy Notification Card */}
-        <div className="relative -mt-4 px-4 md:px-10 flex justify-center z-10 flex items-center">
+        <div className="relative -mt-10 px-4 md:px-10 flex justify-center z-10 flex items-center">
           <div className="w-full max-w-3xl bg-surface-dark/95 dark:bg-[#1a2632]/95 backdrop-blur-md border border-[#233748] rounded-xl shadow-2xl overflow-hidden p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center justify-between">
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-full bg-primary/10 text-primary shrink-0 mt-4">
@@ -86,12 +86,12 @@ const Home: React.FC = () => {
               <div className="flex flex-col gap-1">
                 <p className="text-white text-lg font-bold">Política de Reservas</p>
                 <p className="text-gray-400 text-sm leading-relaxed max-w-md">
-                  Para usted reservar un turno deberá pagar un monto de <span className="text-white font-semibold">200 CUP</span> en caso de no asistir a su cita, el monto no será reembolsado. Muchas gracias
+                  Para usted reservar un turno deberá pagar un monto de <span className="text-white font-semibold">200 CUP</span> en caso de no asistir a su cita, el monto no será reembolsado. Muchas gracias.
                 </p>
               </div>
             </div>
-            <div className="w-full md:w-auto flex flex-col items-stretch md:items-end gap-2 bg-[#111a22] p-4 rounded-lg border border-[#233748]">
-              <span className="text-xs text-gray-500 uppercase tracking-wider font-semibold">Tarjeta a transferir</span>
+            <div className="w-[270px] flex flex-col items-stretch gap-3 bg-[#111a22] p-4 rounded-lg border border-[#233748]">
+              <span className="text-sm text-gray-500 uppercase tracking-wider font-semibold">Tarjeta a transferir</span>
               <div className="flex items-center justify-between gap-3">
                 <span className="text-white font-mono text-lg tracking-wider">{CARD_NUMBER}</span>
                 <button 
@@ -155,21 +155,21 @@ const Home: React.FC = () => {
               <span className="material-symbols-outlined text-white text-3xl">verified_user</span>
             </div>
             <h3 className="text-2xl font-bold text-white">Experiencia</h3>
-            <p className="text-slate-400">Barbero con experiencia en estilos clásicos y modernos.</p>
+            <p className="text-slate-400 text-lg">Barbero con experiencia en estilos clásicos y modernos ✂️.</p>
           </div>
           <div className="flex flex-col items-center text-center gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
             <div className="size-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
               <span className="material-symbols-outlined text-white text-3xl">chair</span>
             </div>
             <h3 className="text-2xl font-bold text-white">Comodidad</h3>
-            <p className="text-slate-400">Ambiente relajante.</p>
+            <p className="text-slate-400 text-lg">Ambiente relajante y con chisme que vale el doble 😎.</p>
           </div>
           <div className="flex flex-col items-center text-center gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
             <div className="size-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
               <span className="material-symbols-outlined text-white text-3xl">acute_relax</span>
             </div>
             <h3 className="text-2xl font-bold text-white">Precisión</h3>
-            <p className="text-slate-400">Nos tomamos el tiempo necesario para asegurar que cada detalle sea perfecto.</p>
+            <p className="text-slate-400 text-lg">Tiempo necesario para asegurar que cada detalle sea perfecto ✌🏻.</p>
           </div>
         </div>
 

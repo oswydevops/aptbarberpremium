@@ -77,8 +77,7 @@ const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose, mode = 'guide'
                   <h3 className="text-xl font-bold">Asistente de Estilo IA</h3>
                 </div>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                  Usa el chat flotante para recibir consejos sobre qué corte te favorece más según tu tipo de rostro, 
-                  consultar tendencias o resolver dudas rápidas sobre el local.
+                  En estos momentos no está disponible el asistente de estilo IA por mantenimiento. Próximamente lo tendremos disponible.
                 </p>
               </section>
 

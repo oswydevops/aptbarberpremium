@@ -26,10 +26,10 @@ const Navbar: React.FC = () => {
         <img 
             src="/icons/logo-apt.svg" 
             alt="Logo APT Barber" 
-            className="size-9 group-hover:rotate-12 transition-transform duration-300 object-contain"
+            className="size-12 group-hover:rotate-12 transition-transform duration-300 object-contain animate-pulse"
             onError={(e) => (e.currentTarget.style.display = 'none')}
           />
-          <h2 className="text-[25px] font-bold tracking-tighter text-slate-900 dark:text-white">APT Barber</h2>
+          <h2 className="text-[25px] font-bold tracking-tighter text-slate-900 dark:text-white">APT BARBER</h2>
         </Link>
 
         {/* Desktop Nav */}

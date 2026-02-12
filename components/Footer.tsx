@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   const paymentMethods = [
     { src: '/icons/cash.svg', label: 'Efectivo' },
     { src: '/icons/enzona-logo.svg', label: 'Enzona' },
-    { src: '/icons/transfermovil-logo.svg', label: 'TransferMovil' },
+    { src: '/icons/transfermovil-logo.svg', label: 'Transfermóvil' },
     { src: '/icons/bitcoin-logo.svg', label: 'Cripto' }
   ];
 
