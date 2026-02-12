@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Navbar from './components/Navbar';
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         </main>
         <Footer />
         <Assistant />
+        <Analytics />
       </div>
     </Router>
   );
